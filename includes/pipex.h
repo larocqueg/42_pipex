@@ -28,4 +28,8 @@
 // libf with ft_printf & get_next_line
 # include "../libft/libft.h"
 
+typedef	struct	s_pipe
+{
+}	t_pipex;
+
 #endif
