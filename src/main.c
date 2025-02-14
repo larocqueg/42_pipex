@@ -14,10 +14,17 @@
 
 int	main(int ac, char **av)
 {
-	if (ac >= 5)
+	int		fd[2];
+	pit_t	pid;
+
+	if (ac == 5)
 	{
-		if ((ft_strncmp(av[1], "here_doc", 8) == 0 && ac < 6))
-			return (ft_putstr_fd(ARGS_BONUS_ERROR, 2), -1);
-		
+		if (pipe(fd) == -1)
+			ft_error();
+		pid = fork;
+		if (pid == -1)
+			ft_error();
+		else if (pid == 0)
+			child(av, env, fd);
 	}
 }
