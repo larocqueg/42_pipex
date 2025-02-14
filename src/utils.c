@@ -12,14 +12,14 @@
 
 #include "../includes/pipex.h"
 
-void	child()
+void	child(char **av, char **env, int fd)
 {
 }
 
-void	parent()
+void	parent(char **av, char **env, int fd)
 {
 }
 
-void	ft_error()
+void	ft_error(void)
 {
 }
