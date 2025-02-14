@@ -19,6 +19,8 @@
 # include <fcntl.h>
 // wait, waitpid
 # include <sys/wait.h>
+// pid_t
+# include <sys/types.h>
 // malloc, free, exit
 # include <stdlib.h>
 // perror
