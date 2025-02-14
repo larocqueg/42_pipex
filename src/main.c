@@ -6,7 +6,7 @@
 /*   By: gde-la-r <gde-la-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:21:35 by gde-la-r          #+#    #+#             */
-/*   Updated: 2025/02/14 15:21:36 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:41:49 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,21 @@
 int	main(int ac, char **av)
 {
 	int		fd[2];
-	pit_t	pid;
+	pid_t	pid;
 
 	if (ac == 5)
 	{
 		if (pipe(fd) == -1)
 			ft_error();
-		pid = fork;
+		pid = fork();
 		if (pid == -1)
 			ft_error();
 		else if (pid == 0)
 			child(av, env, fd);
+		wait(NULL);
+		parent(av, env, fd);
 		return (0);
 	}
-	return (ft_putstr_fd("AV_ERROR", 2), 1);
+	else
+		return (ft_putstr_fd(AV_ERROR, 2), 1);
 }
