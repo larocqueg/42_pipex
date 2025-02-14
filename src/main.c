@@ -26,5 +26,7 @@ int	main(int ac, char **av)
 			ft_error();
 		else if (pid == 0)
 			child(av, env, fd);
+		return (0);
 	}
+	return (ft_putstr_fd("AV_ERROR", 2), 1);
 }
