@@ -9,3 +9,23 @@
 /*   Updated: 2025/02/14 15:21:24 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PIPEX_H
+# define PIPEX_H
+
+// access, dup, dup2, execve, fork, pipe
+# include <unistd.h>
+// open
+# include <fcntl.h>
+// wait, waitpid
+# include <sys/wait.h>
+// malloc, free, exit
+# include <stdlib.h>
+// perror
+# include <stdio.h>
+// stderror
+# include <string.h>
+// libf with ft_printf & get_next_line
+# include "../libft/libft.h"
+
+#endif
