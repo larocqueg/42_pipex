@@ -20,10 +20,11 @@ FLAGS = -Wall -Wextra -Werror
 # Paths
 SRC_DIR = ./src
 INCLUDES = ./includes
-LIBFTi_DIR= ./libft
+LIBFTi_DIR = ./libft
+SRC = $(SRC_DIr)/main.c \
 
 # Objects
-OBJS = $(SRC_DIR:.c=.o)
+OBJS = $(SRC:.c=.o)
 LIBFT = $(LIBFT_DIR)/libft.a
 
 all: $(NAME)
