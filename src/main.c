@@ -11,3 +11,13 @@
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
+
+int	main(int ac, char **av)
+{
+	if (ac >= 5)
+	{
+		if ((ft_strncmp(av[1], "here_doc", 8) == 0 && ac < 6))
+			return (ft_putstr_fd(ARGS_BONUS_ERROR, 2), -1);
+		
+	}
+}
