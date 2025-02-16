@@ -12,7 +12,7 @@
 
 #include "../includes/pipex.h"
 
-int	main(int ac, char **av)
+int	main(int ac, char **av, char **env)
 {
 	int		fd[2];
 	pid_t	pid;
