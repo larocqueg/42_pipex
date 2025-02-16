@@ -15,13 +15,16 @@ NAME = pipex
 
 # Compilation
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 # Paths
 SRC_DIR = ./src
 INCLUDES = ./includes
-LIBFTi_DIR = ./libft
-SRC = $(SRC_DIr)/main.c \
+LIBFT_DIR = ./libft
+
+# Sources
+SRC = $(SRC_DIR)/main.c \
+	  $(SRC_DIR)/utils.c
 
 # Objects
 OBJS = $(SRC:.c=.o)
@@ -30,23 +33,23 @@ LIBFT = $(LIBFT_DIR)/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	ar rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I $(SRC_DIR) -I $(LIBFT) $ -c $< -o $@
+	$(CC) $(CFLAGS) -I $(INCLUDES) -I $(LIBFT) -c $< -o $@
 
 clean: 
-	rm -rf $(OBJ)
+	rm -rf $(OBJS)
 	make clean -C $(LIBFT_DIR)
 
 fclean: clean
 	rm -rf $(NAME)
-	make fclean -c $(LIBFT_DIR)
+	make fclean -C $(LIBFT_DIR)
 
 re: fclean
 	make all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
