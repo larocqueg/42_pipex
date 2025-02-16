@@ -35,8 +35,8 @@
 #define PIPE_ERROR "Error while trying to create a pipe!\n"
 
 // utils.c
-void	child(char **av, char **env, int fd);
-void	parent(char **av, char **env, int fd);
+void	child(char **av, char **env, int *fd);
+void	parent(char **av, char **env, int *fd);
 void	ft_error();
 
 #endif
