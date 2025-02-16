@@ -48,6 +48,7 @@ void	execute(char *av, char **env)
 {
 	(void)av;
 	(void)env;
+	// This function has to execute each cmd passed by the user, how?
 	return ;
 }
 
