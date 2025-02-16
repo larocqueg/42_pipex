@@ -30,13 +30,15 @@
 // libf with ft_printf & get_next_line
 # include "../libft/libft.h"
 
-#define AV_ERROR  "Usage: $> ./pipex <file1> <cmd1> <cmd2> <file2>\n"
-#define PID_ERROR "Error while trying to create a fork!\n"
-#define PIPE_ERROR "Error while trying to create a pipe!\n"
+# define ERROR		"Error: Bad arguments!\n"
+# define AV_ERROR	"Usage: $> ./pipex <file1> <cmd1> <cmd2> <file2>\n"
+# define PID_ERROR	"Error while trying to create a fork!\n"
+# define PIPE_ERROR	"Error while trying to create a pipe!\n"
 
 // utils.c
 void	child(char **av, char **env, int *fd);
 void	parent(char **av, char **env, int *fd);
-void	ft_error();
+void	execute(char *av, char **env);
+void	ft_error(void);
 
 #endif

@@ -30,6 +30,6 @@ int	main(int ac, char **av, char **env)
 		parent(av, env, fd);
 		return (0);
 	}
-	else
-		return (ft_putstr_fd(AV_ERROR, 2), 1);
+	ft_putstr_fd(ERROR, 2);
+	ft_putstr_fd(AV_ERROR, 2);
 }

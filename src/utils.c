@@ -16,9 +16,9 @@ void	child(char **av, char **env, int *fd)
 {
 	int	fd_infile;
 
-	fd_infile = open(av[1], O_RDONLY);
+	fd_infile = open(av[1], O_RDONLY, 0777);
 	if (fd_infile == -1)
-		error();
+		ft_error();
 	else
 	{
 		close(fd[0]);
@@ -32,9 +32,9 @@ void	parent(char **av, char **env, int *fd)
 {
 	int	fd_outfile;
 
-	fd_outfile = open(av[4], O_WRONLY | O_CREAT | O_TRUNC);
+	fd_outfile = open(av[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (fd_outfile == -1)
-		error ();
+		ft_error ();
 	else
 	{
 		close(fd[1]);
@@ -44,6 +44,16 @@ void	parent(char **av, char **env, int *fd)
 	}
 }
 
+void	execute(char *av, char **env)
+{
+	(void)av;
+	(void)env;
+	return ;
+}
+
 void	ft_error(void)
 {
+	ft_putstr_fd("Error", 2);
+	exit(EXIT_FAILURE);
 }
+
