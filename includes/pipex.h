@@ -38,7 +38,11 @@
 // utils.c
 void	child(char **av, char **env, int *fd);
 void	parent(char **av, char **env, int *fd);
+char	*path_finder(char *cmds, char **env);
 void	execute(char *av, char **env);
+
+// error.c
 void	ft_error(void);
+void	ft_free(char **str);
 
 #endif

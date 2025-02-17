@@ -62,7 +62,6 @@ SRCS =	$(SRC_DIR)/ft_atoi.c \
 		$(PRINTF_DIR)/ft_putstr.c \
 		$(PRINTF_DIR)/ft_strchar.c \
 		$(GNL_DIR)/get_next_line.c \
-		$(GNL_DIR)/get_next_line_utils.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)

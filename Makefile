@@ -24,7 +24,8 @@ LIBFT_DIR = ./libft
 
 # Sources
 SRC = $(SRC_DIR)/main.c \
-	  $(SRC_DIR)/utils.c
+	  $(SRC_DIR)/utils.c \
+	  $(SRC_DIR)/error.c \
 
 # Objects
 OBJS = $(SRC:.c=.o)
@@ -33,13 +34,13 @@ LIBFT = $(LIBFT_DIR)/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -L$(LIBFT_DIR) -lft -o $(NAME)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I $(INCLUDES) -I $(LIBFT) -c $< -o $@
+	$(CC) $(CFLAGS) -I $(INCLUDES) -I $(LIBFT_DIR) -c $< -o $@
 
 clean: 
 	rm -rf $(OBJS)
