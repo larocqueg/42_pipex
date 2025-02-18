@@ -20,6 +20,7 @@ int	main(int ac, char **av, char **env)
 	{
 	}
 	ft_putstr_fd(ERROR, 2);
-	ft_putstr_fd(AV_ERROR_BONUS, 2);
+	ft_putstr_fd(AV_BONUS, 2);
+	ft_putstr_fd(AV_BONUS2, 2);
 	return (1);
 }
