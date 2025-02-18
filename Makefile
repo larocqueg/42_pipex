@@ -42,7 +42,7 @@ all: $(NAME)
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -L$(LIBFT_DIR) -lft -o $(NAME)
 
-bonus: $(BONUS_OBJS)
+bonus: $(BONUS_OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIBFT) -L$(LIBFT_DIR) -lft -o $(NAME_BONUS)
 
 $(LIBFT):
