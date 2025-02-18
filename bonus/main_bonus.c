@@ -14,4 +14,12 @@
 
 int	main(int ac, char **av, char **env)
 {
+	(void)env;
+	(void)av;
+	if (ac >= 5)
+	{
+	}
+	ft_putstr_fd(ERROR, 2);
+	ft_putstr_fd(AV_ERROR_BONUS, 2);
+	return (1);
 }
