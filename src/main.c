@@ -32,4 +32,5 @@ int	main(int ac, char **av, char **env)
 	}
 	ft_putstr_fd(ERROR, 2);
 	ft_putstr_fd(AV_ERROR, 2);
+	return (1);
 }
