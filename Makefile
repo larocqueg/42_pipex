@@ -60,6 +60,7 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME) $(NAME_BONUS)
+	rm -rf outfile infile
 	make fclean -C $(LIBFT_DIR)
 
 re: fclean
