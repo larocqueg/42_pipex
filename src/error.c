@@ -12,10 +12,11 @@
 
 #include "../includes/pipex.h"
 
-void	ft_error(void)
+void	ft_error(char *str)
 {
-	ft_putstr_fd("ERROR\n", 2);
-	exit(EXIT_FAILURE);
+	if (str != NULL)
+		ft_putstr_fd(str, 2);
+	exit(1);
 }
 
 void	ft_free(char **str)

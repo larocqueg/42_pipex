@@ -18,7 +18,7 @@ void	child(char **av, char **env, int *fd)
 
 	fd_infile = open(av[1], O_RDONLY, 0777);
 	if (fd_infile == -1)
-		ft_error();
+		ft_error(INFILE_ERROR);
 	else
 	{
 		close(fd[0]);
@@ -34,7 +34,7 @@ void	parent(char **av, char **env, int *fd)
 
 	fd_outfile = open(av[4], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd_outfile == -1)
-		ft_error ();
+		ft_error (OUTFILE_ERROR);
 	else
 	{
 		close(fd[1]);
@@ -86,9 +86,9 @@ void	execute(char *av, char **env)
 	if (!path)
 	{
 		ft_free(cmds);
-		ft_error();
+		ft_error(NULL);
 	}
 	x = execve(path, cmds, env);
 	if (x == -1)
-		ft_error();
+		ft_error(NULL);
 }

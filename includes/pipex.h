@@ -31,12 +31,12 @@
 # include "../libft/libft.h"
 
 // Macros
-# define ERROR		"Error: Bad arguments!\n"
-# define AV_ERROR	"Usage: $> ./pipex \"file1\" \"cmd1\" \"cmd2\" \"file2\"\n"
+# define INFILE_ERROR "Error: No such file or directory \"infile\"\n"
+# define OUTFILE_ERROR "Error: No such file or directory \"outfile\"\n"
+# define AV_ERROR_1		"Error: Bad arguments!\n"
+# define AV_ERROR_2	"Usage: $> ./pipex \"file1\" \"cmd1\" \"cmd2\" \"file2\"\n"
 # define PID_ERROR	"Error while trying to create a fork!\n"
 # define PIPE_ERROR	"Error while trying to create a pipe!\n"
-# define AV_BONUS	"Usage: $> ./pipex \"file1\" \"cmd1\""
-# define AV_BONUS2	" \"cmd2\" \"...\" \"file2\"\n"
 
 // utils.c
 void	child(char **av, char **env, int *fd);
@@ -45,7 +45,7 @@ char	*path_finder(char *cmds, char **env);
 void	execute(char *av, char **env);
 
 // error.c
-void	ft_error(void);
+void	ft_error(char *str);
 void	ft_free(char **str);
 
 #endif
