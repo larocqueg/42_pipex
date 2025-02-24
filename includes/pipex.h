@@ -37,6 +37,7 @@
 # define AV_ERROR_2	"Usage: $> ./pipex \"file1\" \"cmd1\" \"cmd2\" \"file2\"\n"
 # define PID_ERROR	"Error while trying to create a fork!\n"
 # define PIPE_ERROR	"Error while trying to create a pipe!\n"
+# define PATH_ERROR	"Error: PATH not found!\n"
 
 // utils.c
 void	child(char **av, char **env, int *fd);

@@ -52,8 +52,10 @@ char	*path_finder(char *cmds, char **env)
 	char	*part_path;
 
 	i = 0;
-	while (ft_strnstr(env[i], "PATH", 4) == 0)
+	while (env[i] && ft_strnstr(env[i], "PATH", 4) == 0)
 		i++;
+	if (!env[i])
+		ft_error(PATH_ERROR);
 	paths = ft_split(env[i] + 5, ':');
 	i = 0;
 	while (paths[i])
