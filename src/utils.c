@@ -69,9 +69,7 @@ char	*path_finder(char *cmds, char **env)
 		i++;
 	}
 	i = -1;
-	while (paths[++i])
-		free(paths[i]);
-	free(paths);
+	ft_free(paths);
 	return (0);
 }
 
