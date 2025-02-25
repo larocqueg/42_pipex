@@ -98,8 +98,5 @@ void	execute(char *av, char **env)
 	}
 	x = execve(path, cmds, env);
 	if (x == -1)
-	{
-		perror("execve");
 		ft_error(NULL);
-	}
 }
