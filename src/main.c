@@ -26,7 +26,6 @@ int	main(int ac, char **av, char **env)
 			ft_error(PID_ERROR);
 		else if (pid == 0)
 			child(av, env, fd);
-		//wait(NULL);
 		parent(av, env, fd);
 		return (0);
 	}
