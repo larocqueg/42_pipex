@@ -30,3 +30,11 @@ void	ft_free(char **str)
 		free(str[i++]);
 	free(str);
 }
+
+void	ft_command_error(char **cmds)
+{
+	ft_putstr_fd("Error: command not found \"", 2);
+	ft_putstr_fd(cmds[0], 2);
+	ft_putstr_fd("\"\n", 2);
+	ft_free(cmds);
+}

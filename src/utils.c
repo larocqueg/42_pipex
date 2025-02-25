@@ -93,10 +93,13 @@ void	execute(char *av, char **env)
 	path = path_finder(cmds[0], env);
 	if (!path)
 	{
-		ft_free(cmds);
+		ft_command_error(cmds);
 		ft_error(NULL);
 	}
 	x = execve(path, cmds, env);
 	if (x == -1)
+	{
+		perror("execve");
 		ft_error(NULL);
+	}
 }

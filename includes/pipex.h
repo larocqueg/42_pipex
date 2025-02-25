@@ -48,5 +48,6 @@ void	execute(char *av, char **env);
 // error.c
 void	ft_error(char *str);
 void	ft_free(char **str);
+void	ft_command_error(char **cmds);
 
 #endif
