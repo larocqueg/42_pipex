@@ -18,12 +18,18 @@ void	child(char **av, char **env, int *fd)
 
 	fd_infile = open(av[1], O_RDONLY, 0777);
 	if (fd_infile == -1)
+	{
+		close(fd[0]);
+		close(fd[1]);
 		ft_error(INFILE_ERROR);
+	}
 	else
 	{
 		close(fd[0]);
 		dup2(fd[1], STDOUT_FILENO);
 		dup2(fd_infile, STDIN_FILENO);
+		close(fd[1]);
+		close(fd_infile);
 		execute(av[2], env);
 	}
 }
@@ -40,6 +46,8 @@ void	parent(char **av, char **env, int *fd)
 		close(fd[1]);
 		dup2(fd[0], STDIN_FILENO);
 		dup2(fd_outfile, STDOUT_FILENO);
+		close(fd[0]);
+		close(fd_outfile);
 		execute(av[3], env);
 	}
 }
