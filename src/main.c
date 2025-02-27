@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * after calling pipe(fd) it will create 2 fd, fd[0] is going to be
+ * the read end of the pipe, fd[1] is going to be the write end of the pipe
+ * so, when calling child i close the read end fd[0] bc i want to write in the
+ * pipe, after this the parent functions do the oposite, it will read from pipe,
+ * closing fd[1] before it so i dont have any issue leaving open fds
+ */
+
 #include "../includes/pipex.h"
 
 int	main(int ac, char **av, char **env)
