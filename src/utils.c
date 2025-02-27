@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * dup2 redirects the std input and std outpu,
+ * in the child function it redirects the std in to infile fd and
+ * the std out to write end of the pipe (fd[1]);
+ * on parent it redirects the std in to write end of of the pipe (fd[1])
+ * and the std out to the outfile fd
+ */
+
 #include "../includes/pipex.h"
 
 void	child(char **av, char **env, int *fd)
